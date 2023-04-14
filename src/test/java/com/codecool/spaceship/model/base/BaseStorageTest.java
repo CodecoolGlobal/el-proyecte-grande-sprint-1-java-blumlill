@@ -35,7 +35,7 @@ class BaseStorageTest {
         BaseStorage baseStorage = new BaseStorage();
         try {
             baseStorage.addResource(Resource.METAL, 5);
-        } catch (Exception ignored) {
+        } catch (StorageException ignored) {
         }
 
         Map<Resource, Integer> expected = new HashMap<>() {{
@@ -51,7 +51,7 @@ class BaseStorageTest {
             baseStorage.addResource(Resource.METAL, 5);
             baseStorage.addResource(Resource.METAL, 10);
             baseStorage.addResource(Resource.SILICONE, 2);
-        } catch (Exception ignored) {
+        } catch (StorageException ignored) {
         }
 
         Map<Resource, Integer> expected = new HashMap<>() {{
@@ -72,7 +72,7 @@ class BaseStorageTest {
         BaseStorage baseStorage = new BaseStorage();
         try {
             baseStorage.addResource(Resource.METAL, 5);
-        } catch (Exception ignored) {
+        } catch (StorageException ignored) {
         }
         assertTrue(baseStorage.hasResource(Resource.METAL, 5));
     }
@@ -89,7 +89,7 @@ class BaseStorageTest {
         try {
             baseStorage.addResource(Resource.METAL, 5);
             baseStorage.removeResource(Resource.METAL, 4);
-        } catch (Exception ignored) {
+        } catch (StorageException ignored) {
         }
         Map<Resource, Integer> expected = new HashMap<>() {{
             put(Resource.METAL, 1);
@@ -109,7 +109,7 @@ class BaseStorageTest {
         Map<Resource, Integer> actual = null;
         try {
             actual = baseStorage.getUpgradeCost();
-        } catch (Exception ignored) {
+        } catch (UpgradeNotAvailableException ignored) {
         }
 
         Map<Resource, Integer> expected = new HashMap<>() {{
