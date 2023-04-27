@@ -13,6 +13,8 @@ export function useMessageDispatchContext() {
 
 const empty = "Howdy, Commander! Do something...";
 
+const siliconeImage = '/silicone.png'
+
 export function StationContext({children}) {
 
     const [message, dispatch] = useReducer(messageReducer, empty, (e) => <div>{e}</div>);
@@ -24,7 +26,6 @@ export function StationContext({children}) {
             </MessageDispatchContext.Provider>
         </MessageContext.Provider>
     </>);
-
 }
 
 const messageReducer = (message, action) => {
@@ -35,7 +36,10 @@ const messageReducer = (message, action) => {
                 {Object.keys(action.data).map(key => {
                     console.log(key);
                     console.log(action.data[key]);
-                    return <p key={key} >{key}: {action.data[key]}</p>;
+                    return <div className="message-row">
+                        <img style={{width:"20%", height:"20%"}} src={key.toLowerCase() +'.png'} alt="Silicone" />
+                        <p style={{marginLeft:"5px"}} key={key} >{key}: {action.data[key]}</p>
+                    </div>
                 })}
             </div>;
         }

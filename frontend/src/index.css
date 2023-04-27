@@ -2,12 +2,12 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url("/home/lillbo/codecool/advanced/w2/el-proyecte-grande-sprint-1-java-blumlill/frontend/public/sanc-bridge-full-transparent.jpg");
-    /*background-color: forestgreen;*/
+    background-image: url("../public/sanc-bridge-full-transparent.jpg");
+/*background-color: forestgreen;*/
 }
 
 #root {
-    height: 100vh;
+height: 100vh;
 }
 
 
