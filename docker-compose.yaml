@@ -8,8 +8,19 @@ services:
       POSTGRES_PASSWORD: to_1nf1n1ty_And_Bey0nd
     volumes:
       - pgdata:/var/lib/postgresql/data
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spaceship-app-frontend
+    ports:
+      - "3000:3000"
+
   backend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: spaceship-app-backend
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/spaceship
@@ -20,5 +31,6 @@ services:
       - "8080:8080"
     depends_on:
       - db
+
 volumes:
   pgdata:

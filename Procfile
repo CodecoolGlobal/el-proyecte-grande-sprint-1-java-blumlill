@@ -1,1 +1,1 @@
-web: java -jar target/spaceship-0.0.1.jar
+web: java -jar /app/spaceship-0.0.1.jar
