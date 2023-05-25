@@ -14,8 +14,7 @@
 	<name>spaceship</name>
 	<description>Spaceship Game by Team Minuend</description>
 	<properties>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -97,6 +96,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 
