@@ -1,0 +1,1 @@
+web: java -jar spaceship-0.0.1.jar
